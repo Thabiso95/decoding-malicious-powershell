@@ -1,6 +1,6 @@
 
 import unittest
-from analysis.detect_powershell import analyse_script
+from analysis.detection.detect_powershell import analyse_script
 
 
 class TestPowerShellDetector(unittest.TestCase):
