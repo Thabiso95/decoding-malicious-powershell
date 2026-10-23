@@ -1,0 +1,19 @@
+
+{
+  "case_id": "PS-001",
+  "dataset_type": "synthetic_training_data",
+  "event": {
+    "EventID": 1,
+    "Provider": "Microsoft-Windows-Sysmon",
+    "Computer": "WS-014",
+    "UtcTime": "2026-10-22 08:41:16.420",
+    "Image": "C:\\Windows\\System32\\WindowsPowerShell\\v1.0\\powershell.exe",
+    "CommandLine": "powershell.exe -NoProfile -EncodedCommand UwB0AGEAcgB0AC0AUwBsAGUAZQBwACAALQBTAGUAYwBvAG4AZABzACAAMgA=",
+    "CurrentDirectory": "C:\\Users\\J.Smith\\Downloads",
+    "User": "WS-014\\J.Smith",
+    "ParentImage": "C:\\Windows\\explorer.exe",
+    "ParentCommandLine": "C:\\Windows\\Explorer.EXE",
+    "ProcessId": 4820,
+    "ParentProcessId": 2160
+  }
+}
