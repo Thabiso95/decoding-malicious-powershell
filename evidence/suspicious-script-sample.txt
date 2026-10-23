@@ -1,0 +1,11 @@
+
+# SYNTHETIC TRAINING SAMPLE — DO NOT EXECUTE
+# Illustrates suspicious PowerShell patterns only.
+
+$stage = "SIMULATED_DOWNLOAD"
+$source = "https://example.invalid/payload"
+$destination = "C:\Training\payload.bin"
+
+Write-Output "Training simulation: download indicator observed"
+Write-Output "Training simulation: destination path identified"
+Write-Output "Training simulation: execution step not performed"
