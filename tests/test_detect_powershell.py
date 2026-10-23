@@ -44,6 +44,23 @@ class TestPowerShellDetector(unittest.TestCase):
         )
         self.assertNotIn("external_url", result["findings"])
 
+    def test_synthetic_sample_requires_review(self):
+        from pathlib import Path
+
+        sample_path = (
+            Path(__file__).parent.parent
+            / "evidence"
+            / "suspicious-script-sample.txt"
+        )
+        sample = sample_path.read_text(encoding="utf-8")
+        result = analyse_script(sample)
+
+        self.assertEqual(result["verdict"], "REVIEW_REQUIRED")
+        self.assertIn(
+            "download_related_keyword", result["findings"]
+        )
+        self.assertIn("example_url", result["findings"])
+
 
 if __name__ == "__main__":
     unittest.main()
