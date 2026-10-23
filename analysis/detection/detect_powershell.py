@@ -5,10 +5,13 @@ from pathlib import Path
 
 CASE_ID = "PS-001"
 
-# These are investigation indicators, not proof of malicious activity.
 INDICATORS = {
     "download_method": re.compile(
         r"\bDownloadString\b|\bDownloadFile\b",
+        re.IGNORECASE,
+    ),
+    "download_related_keyword": re.compile(
+        r"\bdownload\b|\bpayload\b|\bstage2\b",
         re.IGNORECASE,
     ),
     "encoded_command": re.compile(
@@ -25,6 +28,10 @@ INDICATORS = {
     ),
     "external_url": re.compile(
         r"https?://(?!example\.invalid\b)[^\s\"']+",
+        re.IGNORECASE,
+    ),
+    "example_url": re.compile(
+        r"https?://example\.invalid\b",
         re.IGNORECASE,
     ),
 }
@@ -45,8 +52,8 @@ def analyse_script(script_text):
             "REVIEW_REQUIRED" if findings else "NO_MATCHING_INDICATORS"
         ),
         "limitation": (
-            "Static indicator matching only; findings do not prove execution "
-            "or malicious intent."
+            "Static keyword and pattern matching only. Findings do not prove "
+            "execution, a successful download, or malicious intent."
         ),
     }
 
